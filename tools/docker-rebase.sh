@@ -41,7 +41,7 @@ fi
 # same we have to use docker ps to find the container id.   That is not as easy
 # as it seems if you want to be "fool proof".
 
-re=$((docker ps -a -q --no-trunc --before="$1" ;docker ps -a -q --no-trunc --since="$1")|sort -u|tr '\n' '|')
+re=$((docker ps -a -q --no-trunc --filter before="$1" ;docker ps -a -q --no-trunc --filter since="$1")|sort -u|tr '\n' '|')
 containerId=$(docker ps --no-trunc -a -q | egrep -v "^($re)\$")
 imageId=$(docker inspect --format '{{.Image}}' "$containerId")
 

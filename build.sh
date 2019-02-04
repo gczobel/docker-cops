@@ -33,7 +33,7 @@ mkdir -p tmp/home && cd tmp/home
 # NOTE: it's up to you which version you want. I have test with 1.0.0RC3.
 #------------------------------------------------------------------------------
 git clone https://github.com/seblucas/cops.git
-git checkout tags/1.0.0RC3
+git checkout tags/1.1.2
 cd cops
 
 #------------------------------------------------------------------------------
